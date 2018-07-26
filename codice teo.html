@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <style>
+        *{
+            box-sizing: border-box;
+        }
+            @keyframes slideshow{
+                0%, 20%{
+                    background-image: url(11A_01046.jpg);
+                }
+                25%, 45%{
+                    background-image: url(IMG_3957.JPG);
+                }
+                50%, 70%{
+                    background-image: url(IMG_4896.JPG);
+                }
+                75%, 95%{
+                    background-image: url(_33_00397.jpg);
+                }
+                100%{
+                    background-image: url(11A_01046.jpg);
+                }
+            }
+            #imgSlide{
+                height:80%;
+                width:75%;
+                animation: slideshow 10s linear infinite;
+                background-position: center;
+                background-size: cover;
+            }
+            html, body {
+                width:100%;height:100%;
+                padding:0;margin: 0;
+                background-color: black;
+                color:white;
+                font-family: sans-serif, Helvetica;
+            }
+            ul {
+                padding: 0;
+                margin:0;
+                list-style-type: none;
+                font-size: 5vw;
+            }
+            li {
+                display: inline-block;
+                cursor:pointer;
+            }
+            #home {
+                width:100%;height:100%;
+                border: 2px solid white;
+                position:relative;
+            }
+            #about {
+                width:100%;height:100%;
+                border: 2px solid white;
+            }
+            #work {
+                width:100%;height:100%;
+                border: 2px solid white;
+            }
+            #contact {
+                width:100%;height:100%;
+                border: 2px solid white;
+            }
+            #testohome {
+                position:absolute;
+                right:5%;
+                top: 0;
+                font-size: 2vw;
+            }
+            /* ------ Social ------- */
+            .icon-bar {
+                position: fixed;
+                bottom: 4%;
+                right: 0;
+            }
+
+            .icon-bar a {
+                display: block;
+                text-align: center;
+                padding: 13px;
+                transition: all 0.3s ease;
+                color: #fff;
+                font-size: 32px;
+            }
+
+            .icon-bar a:hover {
+                background-color: #000;
+                color: rgba(0, 255, 20, 1);
+            }
+
+            .facebook {
+                background: #2E2D2C;
+                color: white;
+            }
+
+            .instagram {
+                background: #2E2D2C;
+                color: white;
+            }
+
+            .icon-bar-len {
+                position: relative;
+
+            }
+
+            .icon-bar-len a {
+                text-align: center;
+                padding: 13px;
+                transition: all 0.3s ease;
+                color: #fff;
+                font-size: 32px;
+            }
+
+            .icon-bar-len a:hover {
+                background-color: #000;
+                color: rgba(0, 255, 20, 1);
+            }
+
+            .icon-bar-len .facebook {
+                background: #2E2D2C;
+                padding-left: 20px;
+                padding-right: 20px;
+                color: white;
+            }
+
+            .icon-bar-len .instagram {
+                background: #2E2D2C;
+                padding-left: 16px;
+                padding-right: 16px;
+                color: white;
+            }
+        </style>
+        <script>
+        </script>
+    </head>
+    <body>
+        <div id="header">
+            <ul>
+                <li>home</li>
+                <li>about</li>
+                <li>work</li>
+                <li>contact</li>
+            </ul>
+        </div>
+        <div id="home">
+            <div id='imgSlide'></div>
+            <div id="testohome">
+                <p>Marco Leonardo Gallo</p>
+                <p>comunication design student <br> @Politecnico di Milano</p>
+            </div>
+        </div>
+        <div id="about"></div>
+        <div id="work">
+            <h1>Work</h1>
+            <h1>alcuni miei lavori nell'ambito della grafica e illustrazione digitale.</h1>
+        </div>
+        <div id="contact"></div>
+        <div class="icon-bar">
+            <a href="https://www.facebook.com/marco.gallo.505/" class="facebook"><i class="fa fa-facebook"></i></a>
+            <a href="https://www.instagram.com/merk188/" class="instagram"><i class="fa fa-instagram"></i></a>
+        </div>
+    </body>
+</html>

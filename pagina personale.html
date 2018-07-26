@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="pagina CSS.css">
+<script src="jquery.min.js"></script>
+</head>
+<body>
+<span id='open' class="simboli">*</span>
+<div id="header-space">
+          <ul id="menu">
+              <li class="simboli">home</li>
+              <li class="simboli">about</li>
+              <li class="simboli">work</li>
+              <li class="simboli">contact</li>
+          </ul>
+      </div>
+<div id="header">
+  <ul id="menu">
+  <li class="simboli">home</li>
+  <li class="simboli">about</li>
+  <li class="simboli">work</li>
+  <li class="simboli">contact</li>
+  </ul>
+</div>
+  <div id="home">
+    <div id="imgs"></div>
+    <div id="testohome">
+    <p>Marco Leonardo Gallo</p>
+    <p>Comunication Design<br> @Politecnico di Milano</p>
+  </div>
+  </div>
+  <div id="about">
+<p id="testoabout">Benvenuto! <br>
+
+                   Sono Marco, vivo in Provincia di Varese e studio<br>
+                   al Politecnico di Milano, ogni tanto scatto qualche foto,<br>
+                   scarabocchio o mi perdo tra le montagne in snowboard.<br>
+                   <br>
+                   Questa &egrave; la mia pagina personale, puoi trovarci alcuni <br>
+                   miei lavori e progetti sia universitari che personali,<br>
+                   per info, richieste o per bersi un paio di birre fai un fischio.</p>
+  </div>
+  <div id="work">
+    <p class="simboli" id="sx">&lt;</p>
+    <p class="simboli" id="dx">&gt;</p>
+    <div class="scroll">
+
+      <div class="card">
+       <a href="http://tyto-addon.it/LCG18/index.html">
+      <img id="gatto" src="Gatto.png" alt="Gatto Mammone">
+     </a>
+     <p id="t1" class="testoOff">Narrazione ipertestuale e interattiva,<br>con la realizzazione di ambientazioni
+                                 modellate<br>in grafica 3D e minigiochi.</p></div>
+
+     <div class="card">
+       <a href="http://spaziomag.space">
+      <img id="mag" src="magmag.png" alt="_mag"></a>
+       <p id="t2" class="testoOff">Branding e comunicazione di un nuovo spazio espositivo <br>per l'associazione AIAP.</p></div>
+
+       <div class="card">
+       <a href="https://www.instagram.com/stylized_noise/">
+        <img id="Stylized" src="logo.png" alt="Stylized Noise logo"></a>
+       <p id="t3" class="testoOff">Logo design per il brand di streetwear Stylized Noise.</p></div>
+
+       <div class="card">
+       <img id="REF" src="ReF.png" alt="Raffaello e la Fornarina">
+       <p id="t4" class="testoOff">Una di una serie di copertine realizzate<br>per il laboratorio di tipografia del professor G. Fuga.</p></div>
+
+       <div class="card">
+       <img id="Campin" src="campin1.png" alt="Campin_Portrait of a Woman">
+       <p id="t5" class="testoOff">Studio del dipinto del pittore fiammingo Robert Campin,<br>realizzato per il corso di Illustrazione Digitale in NABA.</p></div>
+    </div>
+
+    </div>
+  <div id="contact">
+    <div id="mail">
+    <a id="mailto" href="mailto:marco-gallo96@live.it">
+      <p id="cnt" class="simboli">@</p><span>Scrivimi una mail!</span></a></div>
+    </div>
+  <div class="icon-bar">
+  <a href="https://www.facebook.com/marco.gallo.505/" class="facebook"><i class="fa fa-facebook"></i></a>
+  <a href="https://www.instagram.com/merk188/" class="instagram"><i class="fa fa-instagram"></i></a>
+</div>
+<div id='covers'>
+  <div id='conts'>
+      <div class='elems'></div>
+      <div id='qs' class='elems'></div>
+      <div id='ws' class='elems'></div>
+      <div id='es' class='elems'></div>
+      <div id='rs' class='elems'></div>
+      <div id='ts' class='elems'></div>
+  </div>
+</div>
+<script>
+function descrizioneOn() {
+  $(this).addClass("testoOn");
+  $(this).parent().children(':not(.testoOn)').addClass("deactive");
+}
+
+function descrizioneOff() {
+  $(this).removeClass("testoOn");
+  $(this).parent().children(':not(.testoOn)').removeClass("deactive");
+}
+
+$(".card").hover(descrizioneOn, descrizioneOff)
+
+function accendi() {
+  $(this).addClass("simboliOn")
+}
+
+function spegni() {
+  $(this).removeClass("simboliOn")
+}
+
+$(".simboli").hover(accendi, spegni)
+
+function scrollSx(){
+                $('.scroll').animate({'scrollLeft':'-='+($('.scroll').innerWidth()/2)},200)
+            }
+            function scrollDx(){
+                $('.scroll').animate({'scrollLeft':'+='+($('.scroll').innerWidth()/2)},200)
+            }
+            $('#sx').on('click',scrollSx)
+            $('#dx').on('click',scrollDx)
+
+$("#menu li").on('click', function(){
+                            var target = $(this).html();
+                            if (target=="home") target="header-space"
+                            $('html,body').animate({
+                                scrollTop : $('#'+target).offset().top
+                            }, 600)
+                        })
+$(window).on('scroll', function(){
+                                        $('#header').css('top','-100%');
+                                    })
+
+                                    $('#open').on('click',function(){
+                                        if ($(window).scrollTop()>=$('#header').height())
+                                            $('#header').css('top','0%');
+                                    })
+                                    $('#header-space').css('height',$('#header').height());
+setTimeout (function(){
+    $("html","body").scrollTop(0);
+    $("#covers").fadeOut();
+},3000)
+</script>
+</body>
+</html>
